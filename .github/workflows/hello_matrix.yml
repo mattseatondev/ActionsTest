@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch
+
+jobs:
+  say-hello-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        greeting: ["hello there", "hiya", "hey"]
+    
+    steps:
+      - name: Print matrix greeting
+        run: echo "${{ matrix.greeting }} from GH Actions"
